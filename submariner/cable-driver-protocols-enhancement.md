@@ -42,15 +42,15 @@ from the endpoint private IP address. For example, if the private IP address is 
 remote Tunnel IPs.
 * Table 150 shall be used to add the routes for inter-cluster communication.
 
-Example of routeing rules added by the IPTun driver on a gateway node to other nodes
+Example of routing rules added by the IPTun driver on a gateway node to other nodes
 
 ```console
-ip route add 10.2.0.0/16 encap ip id 100 dst 172.18.0.21 via 243.18.0.21 dev ipip0 table 100 metric 100 src 10.1.96.0
-ip route add 100.2.0.0/16 encap ip id 100 dst 172.18.0.21 via 243.18.0.21 dev ipip0 table 100 metric 100 src 10.1.96.0
-ip route add 10.3.0.0/16 encap ip id 100 dst 172.18.0.8 via 243.18.0.8 dev ipip0 table 100 metric 100 src 10.1.96.0
-ip route add 100.3.0.0/16 encap ip id 100 dst 172.18.0.8 via 243.18.0.8 dev ipip0 table 100 metric 100 src 10.1.96.0
-ip route add 10.4.0.0/16 encap ip id 100 dst 172.18.0.4 via 243.18.0.4 dev ipip0 table 100 metric 100 src 10.1.96.0
-ip route add 100.4.0.0/16 encap ip id 100 dst 172.18.0.4 via 243.18.0.4 dev ipip0 table 100 metric 100 src 10.1.96.0
+ip route add 10.2.0.0/16 encap ip id 100 dst 172.18.0.21 via 243.18.0.21 dev ipip-tunnel table 100 metric 100 src 10.1.96.0
+ip route add 100.2.0.0/16 encap ip id 100 dst 172.18.0.21 via 243.18.0.21 dev ipip-tunnel table 100 metric 100 src 10.1.96.0
+ip route add 10.3.0.0/16 encap ip id 100 dst 172.18.0.8 via 243.18.0.8 dev ipip-tunnel table 100 metric 100 src 10.1.96.0
+ip route add 100.3.0.0/16 encap ip id 100 dst 172.18.0.8 via 243.18.0.8 dev ipip-tunnel table 100 metric 100 src 10.1.96.0
+ip route add 10.4.0.0/16 encap ip id 100 dst 172.18.0.4 via 243.18.0.4 dev ipip-tunnel table 100 metric 100 src 10.1.96.0
+ip route add 100.4.0.0/16 encap ip id 100 dst 172.18.0.4 via 243.18.0.4 dev ipip-tunnel table 100 metric 100 src 10.1.96.0
 ```
 
 and the resulting routes on the gateway node:
